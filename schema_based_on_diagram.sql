@@ -40,3 +40,11 @@ CREATE TABLE "invoice_items"(
 INDEX("invoice_id"),
 INDEX("treatment_id")
 );
+
+CREATE TABLE "medical_history_treatment"(
+"id" SERIAL PRIMARY KEY,
+"medical_history_id" INTEGER NOT NULL REFERENCES "medical_histories"("id"),
+"treatment_id" INTEGER NOT NULL REFERENCES "treatments"("id"),
+INDEX("medical_history_id"),
+INDEX("treatment_id")
+);
