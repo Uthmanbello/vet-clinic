@@ -65,13 +65,18 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Uthman Igein Bello-Imoukhuede**
 
 - GitHub: [Uthmanbello](https://github.com/Uthmanbello)
 - Twitter: [@UthmanDeRoyale](https://twitter.com/UthmanDeRoyale)
 - LinkedIn: [Uthman Igein Bello-Imoukhuede](linkedin.com/in/uthmanbelloimoukhuede)
+
+👤 **Bryan Hurtado**
+
+- GitHub: [@DarkxDev](https://github.com/DarkxDev)
+- LinkedIn: [Bryan Hurtado](https://www.linkedin.com/in/bryan-hurtado/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,6 +110,6 @@ I would like to thank my colleagues at Microverse for their support during the p
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
