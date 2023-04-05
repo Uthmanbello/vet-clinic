@@ -3,20 +3,22 @@ CREATE TABLE "medical_histories"(
 "admitted_at" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 "patient_id" INTEGER NOT NULL REFERENCES "patients"("id"),
 "status" VARCHAR(255) NOT NULL,
-INDEX("patient_id")
+INDEX("patient_id"),
+INDEX("id")
 );
 
 CREATE TABLE "invoices"(
 "id" SERIAL PRIMARY KEY,
-"total_amount" DECIMAL(6, 2) NOT NULL,
+"total_amount" DECIMAL(8, 2) NOT NULL,
 "generated_at" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
 "paid_at" TIMESTAMP WITHOUT TIME ZONE,
-"medical_history_id" INTEGER NOT NULL REFERENCES "medical_histories"("id")
+"medical_history_id" INTEGER NOT NULL REFERENCES "medical_histories"("id"),
+INDEX("medical_history_id")
 );
 
 CREATE TABLE "patients"(
 "id" SERIAL PRIMARY KEY,
-"name" VARCHAR(50) NOT NULL,
+"name" VARCHAR(255) NOT NULL,
 "date_of_birth" DATE NOT NULL
 );
 
@@ -24,17 +26,17 @@ CREATE TABLE "treatments"(
 "id" SERIAL PRIMARY KEY,
 "type" VARCHAR(255) NOT NULL,
 "name" VARCHAR(255) NOT NULL,
-"medical_history_id" INTEGER NOT NULL REFERENCES "medical_histories"("id")
+"medical_history_id" INTEGER NOT NULL REFERENCES "medical_histories"("id"),
+INDEX("medical_history_id")
 );
 
 CREATE TABLE "invoice_items"(
 "id" SERIAL PRIMARY KEY,
-"unit_price" DECIMAL(6, 2) NOT NULL,
+"unit_price" DECIMAL(8, 2) NOT NULL,
 "quantity" INTEGER NOT NULL,
-"total_price" DECIMAL(6, 2) NOT NULL,
+"total_price" DECIMAL(8, 2) NOT NULL,
 "invoice_id" INTEGER NOT NULL REFERENCES "invoices"("id"),
-"treatment_id" INTEGER NOT NULL REFERENCES "treatments"("id")
+"treatment_id" INTEGER NOT NULL REFERENCES "treatments"("id"),
+INDEX("invoice_id"),
+INDEX("treatment_id")
 );
-
-CREATE INDEX "invoice_items_invoice_id_idx" ON "invoice_items"("invoice_id");
-CREATE INDEX "treatments_medical_history_id_idx" ON "treatments"("medical_history_id");
