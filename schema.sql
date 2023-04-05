@@ -25,3 +25,9 @@ ALTER TABLE animals ADD COLUMN species_id INTEGER REFERENCES species(id), ADD CO
 CREATE TABLE vets (id SERIAL PRIMARY KEY, name VARCHAR(250), age INTEGER, date_of_graduation DATE);
 CREATE TABLE specializations (id SERIAL PRIMARY KEY, vet_id INTEGER REFERENCES vets(id), species_id INTEGER REFERENCES species(id));
 CREATE TABLE visits (id SERIAL PRIMARY KEY, animal_id INTEGER REFERENCES animals(id), vet_id INTEGER REFERENCES vets(id), visit_date DATE);
+
+/* Performance audit. */
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+CREATE INDEX visits_animal_id_idx ON visits (animal_id);
+CREATE INDEX visits_vet_id_idx ON visits (vet_id);
+CREATE INDEX idx_owners_email ON owners(email);
