@@ -21,6 +21,8 @@
 
 **[Vet Clinic]** is a project where a database was created, a table was also created with data, and finally queried.
 
+![vet-clinic schema diagram](https://user-images.githubusercontent.com/112436398/230991628-9ee8e95f-cce2-454b-acd4-86a39ed844cd.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
